@@ -1,4 +1,4 @@
-package com.stok;
+package org.stok;
 
 /**
  * The DemoA class is written in Java. The class calls method from class DemoB which is written in Kotlin.

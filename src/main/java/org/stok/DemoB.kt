@@ -1,4 +1,4 @@
-package com.stok
+package org.stok
 
 
 /**
