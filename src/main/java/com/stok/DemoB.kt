@@ -21,6 +21,7 @@ class DemoB {
     companion object {  // companion objects is similar to Java static
         @JvmStatic  fun main(args : Array<String>) {  // instead of [] we are using Kotlin class Array
             println("Hello, world!")
+
             // creating instance of Java class. In Kotlin we not use keywork new. Everything is an object.
             val a = DemoA()         // val - readonly variable, similar to final in java. We cannot reassign the variable a
 
@@ -50,6 +51,5 @@ class DemoB {
     fun sum(a: Int, b: Int): Int = a + b     // inline function
 
 
-    }
   }
 
