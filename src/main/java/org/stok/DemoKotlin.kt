@@ -2,9 +2,10 @@ package org.stok
 
 
 /**
-  * The Person data class. We have an immutable field name, and a mutable field age.
- *  Kotlin automatically create constructor and the following methods: equals(), hashCode(), toString(), copy(), componentN() function
-  */
+ * The Person data class. We have an immutable field name, and a mutable field age.
+ *  Kotlin automatically create constructor and the following methods/functions:
+ *  equals(), hashCode(), toString(), copy(), componentN() function
+ */
 data class Person(val name: String, var age: Int)
 
 
@@ -16,38 +17,47 @@ data class Person(val name: String, var age: Int)
 
 class DemoKotlin {
 
-    var firstName: String = ""   // mutable field firstName in class DemoB
+    var firstName: String = ""   // mutable field firstName in class DemoKotlin
 
     companion object {  // companion objects is similar to Java static
-        @JvmStatic  fun main(args : Array<String>) {  // instead of [] we are using Kotlin class Array
+        @JvmStatic fun main(args: Array<String>) {  // instead of [] we are using Kotlin class Array
             println("Hello Kotlin!")
 
-            // creating instance of Java class. In Kotlin we not use keywork new. Everything is an object.
-            val a = DemoJava()         // val - readonly variable, similar to final in Java. We cannot reassign the variable a
+            // creating instance of Java class. In Kotlin we not use keyword new. Everything is an object.
+            val demoJava = DemoJava()         // val - readonly variable, similar to final in Java. We cannot reassign the variable a
 
             // calling Java method what
-            var b = a.isJavaFun()        // var - normal vairable
+            var b = demoJava.isJavaFun()        // var - normal vairable
             println("Calling boolean java function: $b")
 
             // creating instance of Kotlin Class
             var k = DemoKotlin()
             k.demoDataClass()
-            val result = k.sum(2,3)
+            val result = k.sum(2, 3)
             println("sum(2,3) = $result")
+
 
         }
     }
 
     fun demoDataClass() {
-        val o1 = Person("John", 20) // Kotlin not use keyword new
-        val o2 = Person("Bill", 33)
-        o2.age = 40
-        println ("$o1 $o2")  // Kotlin generate toString method for the Person data class
+        val p1 = Person("John", 20) // Kotlin not use keyword new
+        val p2 = Person("Bill", 33)
+        p2.age = 40
+
+        val demoJava = DemoJava()
+        // calling Java void functions it returns kotlin.Unit object
+        val unit = demoJava.makeOlder(p1)
+
+
+        println("p1: $p1 p2: $p2  void: $unit")  // Kotlin generate toString function/method for the Person data class
+
+
     }
 
 
     fun sum(a: Int, b: Int): Int = a + b     // inline function
 
 
-  }
+}
 
