@@ -1,20 +1,33 @@
 package com.stok
 
-/**
-* Created by stok on 21.6.2017.
-*/
 
+/**
+  * The Person in data class. We have an immutable field name, and a mutable field age.
+ *  Kotlin automatically create constructor and the following methods: equals(), hashCode(), toString(), copy(), componentN() function
+  */
 data class Person(val name: String, var age: Int)
+
+
+/**
+ * The DemoB class is written in Kotlin. The class demonstrate Kotlin features.
+ *
+ * Created by stok on 21.6.2017.
+ */
 
 class DemoB {
 
-    var firstName: String = ""
+    var firstName: String = ""   // mutable field firstName in class DemoB
 
     companion object {  // companion objects is similar to Java static
-        @JvmStatic  fun main(args : Array<String>) {
+        @JvmStatic  fun main(args : Array<String>) {  // instead of [] we are using Kotlin class Array
             println("Hello, world!")
-            val a = DemoA()         // val - readonly variable, similar to final in java
+            // creating instance of Java class. In Kotlin we not use keywork new. Everything is an object.
+            val a = DemoA()         // val - readonly variable, similar to final in java. We cannot reassign the variable a
+
+            // calling Java method what
             var b = a.what()        // var - normal vairable
+
+            // creating instance of Kotlin Class
             var kotlinB = DemoB()
             b = true
             println (b)
@@ -34,13 +47,8 @@ class DemoB {
         return "kkkk"
     }
 
-    fun sum(a: Int, b: Int): Int = a + b
+    fun sum(a: Int, b: Int): Int = a + b     // inline function
 
-    fun parse(s: String): Int? {
-       //try {
-       //    s.toInt()
-       //} catch (Number)
-    return null
 
     }
   }
