@@ -26,8 +26,8 @@ class DemoKotlin {
             // creating instance of Java class. In Kotlin we not use keyword new. Everything is an object.
             val demoJava = DemoJava()         // val - readonly variable, similar to final in Java. We cannot reassign the variable a
 
-            // calling Java method what
-            var b = demoJava.isJavaFun()        // var - normal vairable
+            // calling Java method
+            var b = demoJava.isJavaFun()        // var - normal variable
             println("Calling boolean java function: $b")
 
             // creating instance of Kotlin Class
@@ -46,11 +46,11 @@ class DemoKotlin {
         p2.age = 40
 
         val demoJava = DemoJava()
-        // calling Java void functions it returns kotlin.Unit object
+        // calling Java void functions, returns kotlin.Unit object
         val unit = demoJava.makeOlder(p1)
 
 
-        println("p1: $p1 p2: $p2  void: $unit")  // Kotlin generate toString function/method for the Person data class
+        println("p1: $p1  p2: $p2  void: $unit")  // Kotlin generate toString function/method for the Person data class
 
 
     }
